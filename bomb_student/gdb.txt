@@ -1,0 +1,379 @@
+Already logging to gdb.txt.
+Dump of assembler code for function phase_1:
+   0x0000000000001990 <+0>:	endbr64 
+   0x0000000000001994 <+4>:	push   %rbp
+   0x0000000000001995 <+5>:	mov    %rsp,%rbp
+   0x0000000000001998 <+8>:	sub    $0x20,%rsp
+   0x000000000000199c <+12>:	mov    %rdi,-0x18(%rbp)
+   0x00000000000019a0 <+16>:	movzbl 0x2afa(%rip),%eax        # 0x44a1 <studentid+9>
+   0x00000000000019a7 <+23>:	sub    $0x30,%eax
+   0x00000000000019aa <+26>:	mov    %al,-0x5(%rbp)
+   0x00000000000019ad <+29>:	movsbl -0x5(%rbp),%eax
+   0x00000000000019b1 <+33>:	mov    %eax,-0x4(%rbp)
+   0x00000000000019b4 <+36>:	mov    -0x4(%rbp),%edx
+   0x00000000000019b7 <+39>:	mov    %rdx,%rax
+   0x00000000000019ba <+42>:	shl    $0x2,%rax
+   0x00000000000019be <+46>:	add    %rdx,%rax
+   0x00000000000019c1 <+49>:	lea    0x0(,%rax,4),%rdx
+   0x00000000000019c9 <+57>:	add    %rdx,%rax
+   0x00000000000019cc <+60>:	add    %rax,%rax
+   0x00000000000019cf <+63>:	lea    0x264a(%rip),%rdx        # 0x4020 <special>
+   0x00000000000019d6 <+70>:	add    %rax,%rdx
+   0x00000000000019d9 <+73>:	mov    -0x18(%rbp),%rax
+   0x00000000000019dd <+77>:	mov    %rdx,%rsi
+   0x00000000000019e0 <+80>:	mov    %rax,%rdi
+   0x00000000000019e3 <+83>:	call   0x169a <strings_not_equal>
+   0x00000000000019e8 <+88>:	test   %eax,%eax
+   0x00000000000019ea <+90>:	je     0x19f1 <phase_1+97>
+   0x00000000000019ec <+92>:	call   0x196f <explode_bomb>
+   0x00000000000019f1 <+97>:	nop
+   0x00000000000019f2 <+98>:	leave  
+   0x00000000000019f3 <+99>:	ret    
+End of assembler dump.
+Dump of assembler code for function phase_2:
+   0x00000000000019f4 <+0>:	endbr64 
+   0x00000000000019f8 <+4>:	push   %rbp
+   0x00000000000019f9 <+5>:	mov    %rsp,%rbp
+   0x00000000000019fc <+8>:	sub    $0x40,%rsp
+   0x0000000000001a00 <+12>:	mov    %rdi,-0x38(%rbp)
+   0x0000000000001a04 <+16>:	mov    %fs:0x28,%rax
+   0x0000000000001a0d <+25>:	mov    %rax,-0x8(%rbp)
+   0x0000000000001a11 <+29>:	xor    %eax,%eax
+   0x0000000000001a13 <+31>:	lea    -0x20(%rbp),%rdx
+   0x0000000000001a17 <+35>:	mov    -0x38(%rbp),%rax
+   0x0000000000001a1b <+39>:	mov    %rdx,%rsi
+   0x0000000000001a1e <+42>:	mov    %rax,%rdi
+   0x0000000000001a21 <+45>:	call   0x15f5 <read_six_numbers>
+   0x0000000000001a26 <+50>:	mov    -0x20(%rbp),%eax
+   0x0000000000001a29 <+53>:	test   %eax,%eax
+   0x0000000000001a2b <+55>:	jns    0x1a32 <phase_2+62>
+   0x0000000000001a2d <+57>:	call   0x196f <explode_bomb>
+   0x0000000000001a32 <+62>:	mov    -0x20(%rbp),%eax
+   0x0000000000001a35 <+65>:	movzbl 0x2a65(%rip),%edx        # 0x44a1 <studentid+9>
+   0x0000000000001a3c <+72>:	movsbl %dl,%edx
+   0x0000000000001a3f <+75>:	sub    $0x30,%edx
+   0x0000000000001a42 <+78>:	cmp    %edx,%eax
+   0x0000000000001a44 <+80>:	je     0x1a4b <phase_2+87>
+   0x0000000000001a46 <+82>:	call   0x196f <explode_bomb>
+   0x0000000000001a4b <+87>:	mov    -0x1c(%rbp),%eax
+   0x0000000000001a4e <+90>:	movzbl 0x2a4b(%rip),%edx        # 0x44a0 <studentid+8>
+   0x0000000000001a55 <+97>:	movsbl %dl,%edx
+   0x0000000000001a58 <+100>:	sub    $0x30,%edx
+   0x0000000000001a5b <+103>:	cmp    %edx,%eax
+   0x0000000000001a5d <+105>:	je     0x1a64 <phase_2+112>
+   0x0000000000001a5f <+107>:	call   0x196f <explode_bomb>
+   0x0000000000001a64 <+112>:	movl   $0x2,-0x24(%rbp)
+   0x0000000000001a6b <+119>:	jmp    0x1a9d <phase_2+169>
+   0x0000000000001a6d <+121>:	mov    -0x24(%rbp),%eax
+   0x0000000000001a70 <+124>:	cltq   
+   0x0000000000001a72 <+126>:	mov    -0x20(%rbp,%rax,4),%edx
+   0x0000000000001a76 <+130>:	mov    -0x24(%rbp),%eax
+   0x0000000000001a79 <+133>:	sub    $0x1,%eax
+   0x0000000000001a7c <+136>:	cltq   
+   0x0000000000001a7e <+138>:	mov    -0x20(%rbp,%rax,4),%ecx
+   0x0000000000001a82 <+142>:	mov    -0x24(%rbp),%eax
+   0x0000000000001a85 <+145>:	sub    $0x2,%eax
+   0x0000000000001a88 <+148>:	cltq   
+   0x0000000000001a8a <+150>:	mov    -0x20(%rbp,%rax,4),%eax
+   0x0000000000001a8e <+154>:	add    %ecx,%eax
+   0x0000000000001a90 <+156>:	cmp    %eax,%edx
+   0x0000000000001a92 <+158>:	je     0x1a99 <phase_2+165>
+   0x0000000000001a94 <+160>:	call   0x196f <explode_bomb>
+   0x0000000000001a99 <+165>:	addl   $0x1,-0x24(%rbp)
+   0x0000000000001a9d <+169>:	cmpl   $0x5,-0x24(%rbp)
+   0x0000000000001aa1 <+173>:	jle    0x1a6d <phase_2+121>
+   0x0000000000001aa3 <+175>:	nop
+   0x0000000000001aa4 <+176>:	mov    -0x8(%rbp),%rax
+   0x0000000000001aa8 <+180>:	xor    %fs:0x28,%rax
+   0x0000000000001ab1 <+189>:	je     0x1ab8 <phase_2+196>
+   0x0000000000001ab3 <+191>:	call   0x1130 <__stack_chk_fail@plt>
+   0x0000000000001ab8 <+196>:	leave  
+   0x0000000000001ab9 <+197>:	ret    
+End of assembler dump.
+Dump of assembler code for function phase_3:
+   0x0000000000001aba <+0>:	endbr64 
+   0x0000000000001abe <+4>:	push   %rbp
+   0x0000000000001abf <+5>:	mov    %rsp,%rbp
+   0x0000000000001ac2 <+8>:	sub    $0x30,%rsp
+   0x0000000000001ac6 <+12>:	mov    %rdi,-0x28(%rbp)
+   0x0000000000001aca <+16>:	mov    %fs:0x28,%rax
+   0x0000000000001ad3 <+25>:	mov    %rax,-0x8(%rbp)
+   0x0000000000001ad7 <+29>:	xor    %eax,%eax
+   0x0000000000001ad9 <+31>:	movl   $0x0,-0x10(%rbp)
+   0x0000000000001ae0 <+38>:	movl   $0x0,-0xc(%rbp)
+   0x0000000000001ae7 <+45>:	lea    -0x14(%rbp),%rcx
+   0x0000000000001aeb <+49>:	lea    -0x18(%rbp),%rdx
+   0x0000000000001aef <+53>:	mov    -0x28(%rbp),%rax
+   0x0000000000001af3 <+57>:	lea    0x86e(%rip),%rsi        # 0x2368
+   0x0000000000001afa <+64>:	mov    %rax,%rdi
+   0x0000000000001afd <+67>:	mov    $0x0,%eax
+   0x0000000000001b02 <+72>:	call   0x1160 <__isoc99_sscanf@plt>
+   0x0000000000001b07 <+77>:	mov    %eax,-0xc(%rbp)
+   0x0000000000001b0a <+80>:	cmpl   $0x1,-0xc(%rbp)
+   0x0000000000001b0e <+84>:	jg     0x1b15 <phase_3+91>
+   0x0000000000001b10 <+86>:	call   0x196f <explode_bomb>
+   0x0000000000001b15 <+91>:	movzbl 0x2983(%rip),%eax        # 0x449f <studentid+7>
+   0x0000000000001b1c <+98>:	movsbl %al,%eax
+   0x0000000000001b1f <+101>:	lea    -0x30(%rax),%edx
+   0x0000000000001b22 <+104>:	mov    -0x18(%rbp),%eax
+   0x0000000000001b25 <+107>:	cmp    %eax,%edx
+   0x0000000000001b27 <+109>:	je     0x1b2e <phase_3+116>
+   0x0000000000001b29 <+111>:	call   0x196f <explode_bomb>
+   0x0000000000001b2e <+116>:	mov    -0x18(%rbp),%eax
+   0x0000000000001b31 <+119>:	cmp    $0x9,%eax
+   0x0000000000001b34 <+122>:	ja     0x1bb3 <phase_3+249>
+   0x0000000000001b36 <+124>:	mov    %eax,%eax
+   0x0000000000001b38 <+126>:	lea    0x0(,%rax,4),%rdx
+   0x0000000000001b40 <+134>:	lea    0x829(%rip),%rax        # 0x2370
+   0x0000000000001b47 <+141>:	mov    (%rdx,%rax,1),%eax
+   0x0000000000001b4a <+144>:	cltq   
+   0x0000000000001b4c <+146>:	lea    0x81d(%rip),%rdx        # 0x2370
+   0x0000000000001b53 <+153>:	add    %rdx,%rax
+   0x0000000000001b56 <+156>:	notrack jmp *%rax
+   0x0000000000001b59 <+159>:	movl   $0x32f,-0x10(%rbp)
+   0x0000000000001b60 <+166>:	jmp    0x1bb8 <phase_3+254>
+   0x0000000000001b62 <+168>:	movl   $0x130,-0x10(%rbp)
+   0x0000000000001b69 <+175>:	jmp    0x1bb8 <phase_3+254>
+   0x0000000000001b6b <+177>:	movl   $0x184,-0x10(%rbp)
+   0x0000000000001b72 <+184>:	jmp    0x1bb8 <phase_3+254>
+   0x0000000000001b74 <+186>:	movl   $0x28e,-0x10(%rbp)
+   0x0000000000001b7b <+193>:	jmp    0x1bb8 <phase_3+254>
+   0x0000000000001b7d <+195>:	movl   $0x11c,-0x10(%rbp)
+   0x0000000000001b84 <+202>:	jmp    0x1bb8 <phase_3+254>
+   0x0000000000001b86 <+204>:	movl   $0x201,-0x10(%rbp)
+   0x0000000000001b8d <+211>:	jmp    0x1bb8 <phase_3+254>
+   0x0000000000001b8f <+213>:	movl   $0x1a9,-0x10(%rbp)
+   0x0000000000001b96 <+220>:	jmp    0x1bb8 <phase_3+254>
+   0x0000000000001b98 <+222>:	movl   $0x374,-0x10(%rbp)
+   0x0000000000001b9f <+229>:	jmp    0x1bb8 <phase_3+254>
+   0x0000000000001ba1 <+231>:	movl   $0x7b,-0x10(%rbp)
+   0x0000000000001ba8 <+238>:	jmp    0x1bb8 <phase_3+254>
+   0x0000000000001baa <+240>:	movl   $0x141,-0x10(%rbp)
+   0x0000000000001bb1 <+247>:	jmp    0x1bb8 <phase_3+254>
+   0x0000000000001bb3 <+249>:	call   0x196f <explode_bomb>
+   0x0000000000001bb8 <+254>:	mov    -0x14(%rbp),%eax
+   0x0000000000001bbb <+257>:	cmp    %eax,-0x10(%rbp)
+   0x0000000000001bbe <+260>:	je     0x1bc5 <phase_3+267>
+   0x0000000000001bc0 <+262>:	call   0x196f <explode_bomb>
+   0x0000000000001bc5 <+267>:	nop
+   0x0000000000001bc6 <+268>:	mov    -0x8(%rbp),%rax
+   0x0000000000001bca <+272>:	xor    %fs:0x28,%rax
+   0x0000000000001bd3 <+281>:	je     0x1bda <phase_3+288>
+   0x0000000000001bd5 <+283>:	call   0x1130 <__stack_chk_fail@plt>
+   0x0000000000001bda <+288>:	leave  
+   0x0000000000001bdb <+289>:	ret    
+End of assembler dump.
+Dump of assembler code for function phase_4:
+   0x0000000000001c56 <+0>:	endbr64 
+   0x0000000000001c5a <+4>:	push   %rbp
+   0x0000000000001c5b <+5>:	mov    %rsp,%rbp
+   0x0000000000001c5e <+8>:	sub    $0x30,%rsp
+   0x0000000000001c62 <+12>:	mov    %rdi,-0x28(%rbp)
+   0x0000000000001c66 <+16>:	mov    %fs:0x28,%rax
+   0x0000000000001c6f <+25>:	mov    %rax,-0x8(%rbp)
+   0x0000000000001c73 <+29>:	xor    %eax,%eax
+   0x0000000000001c75 <+31>:	lea    -0x18(%rbp),%rcx
+   0x0000000000001c79 <+35>:	lea    -0x1c(%rbp),%rdx
+   0x0000000000001c7d <+39>:	mov    -0x28(%rbp),%rax
+   0x0000000000001c81 <+43>:	lea    0x6e0(%rip),%rsi        # 0x2368
+   0x0000000000001c88 <+50>:	mov    %rax,%rdi
+   0x0000000000001c8b <+53>:	mov    $0x0,%eax
+   0x0000000000001c90 <+58>:	call   0x1160 <__isoc99_sscanf@plt>
+   0x0000000000001c95 <+63>:	mov    %eax,-0x14(%rbp)
+   0x0000000000001c98 <+66>:	cmpl   $0x2,-0x14(%rbp)
+   0x0000000000001c9c <+70>:	jne    0x1cad <phase_4+87>
+   0x0000000000001c9e <+72>:	mov    -0x1c(%rbp),%eax
+   0x0000000000001ca1 <+75>:	test   %eax,%eax
+   0x0000000000001ca3 <+77>:	js     0x1cad <phase_4+87>
+   0x0000000000001ca5 <+79>:	mov    -0x1c(%rbp),%eax
+   0x0000000000001ca8 <+82>:	cmp    $0xe,%eax
+   0x0000000000001cab <+85>:	jle    0x1cb2 <phase_4+92>
+   0x0000000000001cad <+87>:	call   0x196f <explode_bomb>
+   0x0000000000001cb2 <+92>:	movl   $0x7,-0x10(%rbp)
+   0x0000000000001cb9 <+99>:	mov    -0x1c(%rbp),%eax
+   0x0000000000001cbc <+102>:	mov    $0xe,%edx
+   0x0000000000001cc1 <+107>:	mov    $0x0,%esi
+   0x0000000000001cc6 <+112>:	mov    %eax,%edi
+   0x0000000000001cc8 <+114>:	call   0x1bdc <func4>
+   0x0000000000001ccd <+119>:	mov    %eax,-0xc(%rbp)
+   0x0000000000001cd0 <+122>:	mov    -0xc(%rbp),%eax
+   0x0000000000001cd3 <+125>:	cmp    -0x10(%rbp),%eax
+   0x0000000000001cd6 <+128>:	jne    0x1ce0 <phase_4+138>
+   0x0000000000001cd8 <+130>:	mov    -0x18(%rbp),%eax
+   0x0000000000001cdb <+133>:	cmp    %eax,-0x10(%rbp)
+   0x0000000000001cde <+136>:	je     0x1ce5 <phase_4+143>
+   0x0000000000001ce0 <+138>:	call   0x196f <explode_bomb>
+   0x0000000000001ce5 <+143>:	nop
+   0x0000000000001ce6 <+144>:	mov    -0x8(%rbp),%rax
+   0x0000000000001cea <+148>:	xor    %fs:0x28,%rax
+   0x0000000000001cf3 <+157>:	je     0x1cfa <phase_4+164>
+   0x0000000000001cf5 <+159>:	call   0x1130 <__stack_chk_fail@plt>
+   0x0000000000001cfa <+164>:	leave  
+   0x0000000000001cfb <+165>:	ret    
+End of assembler dump.
+Dump of assembler code for function phase_5:
+   0x0000000000001cfc <+0>:	endbr64 
+   0x0000000000001d00 <+4>:	push   %rbp
+   0x0000000000001d01 <+5>:	mov    %rsp,%rbp
+   0x0000000000001d04 <+8>:	sub    $0x30,%rsp
+   0x0000000000001d08 <+12>:	mov    %rdi,-0x28(%rbp)
+   0x0000000000001d0c <+16>:	mov    %fs:0x28,%rax
+   0x0000000000001d15 <+25>:	mov    %rax,-0x8(%rbp)
+   0x0000000000001d19 <+29>:	xor    %eax,%eax
+   0x0000000000001d1b <+31>:	mov    -0x28(%rbp),%rax
+   0x0000000000001d1f <+35>:	mov    %rax,%rdi
+   0x0000000000001d22 <+38>:	call   0x1664 <string_length>
+   0x0000000000001d27 <+43>:	mov    %eax,-0x14(%rbp)
+   0x0000000000001d2a <+46>:	cmpl   $0x6,-0x14(%rbp)
+   0x0000000000001d2e <+50>:	je     0x1d35 <phase_5+57>
+   0x0000000000001d30 <+52>:	call   0x196f <explode_bomb>
+   0x0000000000001d35 <+57>:	movl   $0x0,-0x18(%rbp)
+   0x0000000000001d3c <+64>:	jmp    0x1d6e <phase_5+114>
+   0x0000000000001d3e <+66>:	mov    -0x18(%rbp),%eax
+   0x0000000000001d41 <+69>:	movslq %eax,%rdx
+   0x0000000000001d44 <+72>:	mov    -0x28(%rbp),%rax
+   0x0000000000001d48 <+76>:	add    %rdx,%rax
+   0x0000000000001d4b <+79>:	movzbl (%rax),%eax
+   0x0000000000001d4e <+82>:	movsbl %al,%eax
+   0x0000000000001d51 <+85>:	and    $0xf,%eax
+   0x0000000000001d54 <+88>:	cltq   
+   0x0000000000001d56 <+90>:	lea    0x25d3(%rip),%rdx        # 0x4330 <array.3096>
+   0x0000000000001d5d <+97>:	movzbl (%rax,%rdx,1),%edx
+   0x0000000000001d61 <+101>:	mov    -0x18(%rbp),%eax
+   0x0000000000001d64 <+104>:	cltq   
+   0x0000000000001d66 <+106>:	mov    %dl,-0xf(%rbp,%rax,1)
+   0x0000000000001d6a <+110>:	addl   $0x1,-0x18(%rbp)
+   0x0000000000001d6e <+114>:	cmpl   $0x5,-0x18(%rbp)
+   0x0000000000001d72 <+118>:	jle    0x1d3e <phase_5+66>
+   0x0000000000001d74 <+120>:	movb   $0x0,-0x9(%rbp)
+   0x0000000000001d78 <+124>:	lea    -0xf(%rbp),%rax
+   0x0000000000001d7c <+128>:	lea    0x615(%rip),%rsi        # 0x2398
+   0x0000000000001d83 <+135>:	mov    %rax,%rdi
+   0x0000000000001d86 <+138>:	call   0x169a <strings_not_equal>
+   0x0000000000001d8b <+143>:	test   %eax,%eax
+   0x0000000000001d8d <+145>:	je     0x1d94 <phase_5+152>
+   0x0000000000001d8f <+147>:	call   0x196f <explode_bomb>
+   0x0000000000001d94 <+152>:	nop
+   0x0000000000001d95 <+153>:	mov    -0x8(%rbp),%rax
+   0x0000000000001d99 <+157>:	xor    %fs:0x28,%rax
+   0x0000000000001da2 <+166>:	je     0x1da9 <phase_5+173>
+   0x0000000000001da4 <+168>:	call   0x1130 <__stack_chk_fail@plt>
+   0x0000000000001da9 <+173>:	leave  
+   0x0000000000001daa <+174>:	ret    
+End of assembler dump.
+Dump of assembler code for function phase_6:
+   0x0000000000001dab <+0>:	endbr64 
+   0x0000000000001daf <+4>:	push   %rbp
+   0x0000000000001db0 <+5>:	mov    %rsp,%rbp
+   0x0000000000001db3 <+8>:	sub    $0x90,%rsp
+   0x0000000000001dba <+15>:	mov    %rdi,-0x88(%rbp)
+   0x0000000000001dc1 <+22>:	mov    %fs:0x28,%rax
+   0x0000000000001dca <+31>:	mov    %rax,-0x8(%rbp)
+   0x0000000000001dce <+35>:	xor    %eax,%eax
+   0x0000000000001dd0 <+37>:	lea    0x25a9(%rip),%rax        # 0x4380 <node1>
+   0x0000000000001dd7 <+44>:	mov    %rax,-0x68(%rbp)
+   0x0000000000001ddb <+48>:	lea    -0x60(%rbp),%rdx
+   0x0000000000001ddf <+52>:	mov    -0x88(%rbp),%rax
+   0x0000000000001de6 <+59>:	mov    %rdx,%rsi
+   0x0000000000001de9 <+62>:	mov    %rax,%rdi
+   0x0000000000001dec <+65>:	call   0x15f5 <read_six_numbers>
+   0x0000000000001df1 <+70>:	movl   $0x0,-0x78(%rbp)
+   0x0000000000001df8 <+77>:	jmp    0x1e4e <phase_6+163>
+   0x0000000000001dfa <+79>:	mov    -0x78(%rbp),%eax
+   0x0000000000001dfd <+82>:	cltq   
+   0x0000000000001dff <+84>:	mov    -0x60(%rbp,%rax,4),%eax
+   0x0000000000001e03 <+88>:	test   %eax,%eax
+   0x0000000000001e05 <+90>:	jle    0x1e15 <phase_6+106>
+   0x0000000000001e07 <+92>:	mov    -0x78(%rbp),%eax
+   0x0000000000001e0a <+95>:	cltq   
+   0x0000000000001e0c <+97>:	mov    -0x60(%rbp,%rax,4),%eax
+   0x0000000000001e10 <+101>:	cmp    $0x6,%eax
+   0x0000000000001e13 <+104>:	jle    0x1e1a <phase_6+111>
+   0x0000000000001e15 <+106>:	call   0x196f <explode_bomb>
+   0x0000000000001e1a <+111>:	mov    -0x78(%rbp),%eax
+   0x0000000000001e1d <+114>:	add    $0x1,%eax
+   0x0000000000001e20 <+117>:	mov    %eax,-0x74(%rbp)
+   0x0000000000001e23 <+120>:	jmp    0x1e44 <phase_6+153>
+   0x0000000000001e25 <+122>:	mov    -0x78(%rbp),%eax
+   0x0000000000001e28 <+125>:	cltq   
+   0x0000000000001e2a <+127>:	mov    -0x60(%rbp,%rax,4),%edx
+   0x0000000000001e2e <+131>:	mov    -0x74(%rbp),%eax
+   0x0000000000001e31 <+134>:	cltq   
+   0x0000000000001e33 <+136>:	mov    -0x60(%rbp,%rax,4),%eax
+   0x0000000000001e37 <+140>:	cmp    %eax,%edx
+   0x0000000000001e39 <+142>:	jne    0x1e40 <phase_6+149>
+   0x0000000000001e3b <+144>:	call   0x196f <explode_bomb>
+   0x0000000000001e40 <+149>:	addl   $0x1,-0x74(%rbp)
+   0x0000000000001e44 <+153>:	cmpl   $0x5,-0x74(%rbp)
+   0x0000000000001e48 <+157>:	jle    0x1e25 <phase_6+122>
+   0x0000000000001e4a <+159>:	addl   $0x1,-0x78(%rbp)
+   0x0000000000001e4e <+163>:	cmpl   $0x5,-0x78(%rbp)
+   0x0000000000001e52 <+167>:	jle    0x1dfa <phase_6+79>
+   0x0000000000001e54 <+169>:	movl   $0x0,-0x78(%rbp)
+   0x0000000000001e5b <+176>:	jmp    0x1e9e <phase_6+243>
+   0x0000000000001e5d <+178>:	mov    -0x68(%rbp),%rax
+   0x0000000000001e61 <+182>:	mov    %rax,-0x70(%rbp)
+   0x0000000000001e65 <+186>:	movl   $0x1,-0x74(%rbp)
+   0x0000000000001e6c <+193>:	jmp    0x1e7e <phase_6+211>
+   0x0000000000001e6e <+195>:	mov    -0x70(%rbp),%rax
+   0x0000000000001e72 <+199>:	mov    0x8(%rax),%rax
+   0x0000000000001e76 <+203>:	mov    %rax,-0x70(%rbp)
+   0x0000000000001e7a <+207>:	addl   $0x1,-0x74(%rbp)
+   0x0000000000001e7e <+211>:	mov    -0x78(%rbp),%eax
+   0x0000000000001e81 <+214>:	cltq   
+   0x0000000000001e83 <+216>:	mov    -0x60(%rbp,%rax,4),%eax
+   0x0000000000001e87 <+220>:	cmp    %eax,-0x74(%rbp)
+   0x0000000000001e8a <+223>:	jl     0x1e6e <phase_6+195>
+   0x0000000000001e8c <+225>:	mov    -0x78(%rbp),%eax
+   0x0000000000001e8f <+228>:	cltq   
+   0x0000000000001e91 <+230>:	mov    -0x70(%rbp),%rdx
+   0x0000000000001e95 <+234>:	mov    %rdx,-0x40(%rbp,%rax,8)
+   0x0000000000001e9a <+239>:	addl   $0x1,-0x78(%rbp)
+   0x0000000000001e9e <+243>:	cmpl   $0x5,-0x78(%rbp)
+   0x0000000000001ea2 <+247>:	jle    0x1e5d <phase_6+178>
+   0x0000000000001ea4 <+249>:	mov    -0x40(%rbp),%rax
+   0x0000000000001ea8 <+253>:	mov    %rax,-0x68(%rbp)
+   0x0000000000001eac <+257>:	mov    -0x68(%rbp),%rax
+   0x0000000000001eb0 <+261>:	mov    %rax,-0x70(%rbp)
+   0x0000000000001eb4 <+265>:	movl   $0x1,-0x78(%rbp)
+   0x0000000000001ebb <+272>:	jmp    0x1edf <phase_6+308>
+   0x0000000000001ebd <+274>:	mov    -0x78(%rbp),%eax
+   0x0000000000001ec0 <+277>:	cltq   
+   0x0000000000001ec2 <+279>:	mov    -0x40(%rbp,%rax,8),%rdx
+   0x0000000000001ec7 <+284>:	mov    -0x70(%rbp),%rax
+   0x0000000000001ecb <+288>:	mov    %rdx,0x8(%rax)
+   0x0000000000001ecf <+292>:	mov    -0x70(%rbp),%rax
+   0x0000000000001ed3 <+296>:	mov    0x8(%rax),%rax
+   0x0000000000001ed7 <+300>:	mov    %rax,-0x70(%rbp)
+   0x0000000000001edb <+304>:	addl   $0x1,-0x78(%rbp)
+   0x0000000000001edf <+308>:	cmpl   $0x5,-0x78(%rbp)
+   0x0000000000001ee3 <+312>:	jle    0x1ebd <phase_6+274>
+   0x0000000000001ee5 <+314>:	mov    -0x70(%rbp),%rax
+   0x0000000000001ee9 <+318>:	movq   $0x0,0x8(%rax)
+   0x0000000000001ef1 <+326>:	mov    -0x68(%rbp),%rax
+   0x0000000000001ef5 <+330>:	mov    %rax,-0x70(%rbp)
+   0x0000000000001ef9 <+334>:	movl   $0x0,-0x78(%rbp)
+   0x0000000000001f00 <+341>:	jmp    0x1f2b <phase_6+384>
+   0x0000000000001f02 <+343>:	mov    -0x70(%rbp),%rax
+   0x0000000000001f06 <+347>:	mov    (%rax),%edx
+   0x0000000000001f08 <+349>:	mov    -0x70(%rbp),%rax
+   0x0000000000001f0c <+353>:	mov    0x8(%rax),%rax
+   0x0000000000001f10 <+357>:	mov    (%rax),%eax
+   0x0000000000001f12 <+359>:	cmp    %eax,%edx
+   0x0000000000001f14 <+361>:	jge    0x1f1b <phase_6+368>
+   0x0000000000001f16 <+363>:	call   0x196f <explode_bomb>
+   0x0000000000001f1b <+368>:	mov    -0x70(%rbp),%rax
+   0x0000000000001f1f <+372>:	mov    0x8(%rax),%rax
+   0x0000000000001f23 <+376>:	mov    %rax,-0x70(%rbp)
+   0x0000000000001f27 <+380>:	addl   $0x1,-0x78(%rbp)
+   0x0000000000001f2b <+384>:	cmpl   $0x4,-0x78(%rbp)
+   0x0000000000001f2f <+388>:	jle    0x1f02 <phase_6+343>
+   0x0000000000001f31 <+390>:	nop
+   0x0000000000001f32 <+391>:	mov    -0x8(%rbp),%rax
+   0x0000000000001f36 <+395>:	xor    %fs:0x28,%rax
+   0x0000000000001f3f <+404>:	je     0x1f46 <phase_6+411>
+   0x0000000000001f41 <+406>:	call   0x1130 <__stack_chk_fail@plt>
+   0x0000000000001f46 <+411>:	leave  
+   0x0000000000001f47 <+412>:	ret    
+End of assembler dump.
+No symbol "quit" in current context.
